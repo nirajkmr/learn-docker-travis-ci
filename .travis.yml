@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - docker build -t nirajkmr777s/node .
+  - docker images nirajkmr777s/node
