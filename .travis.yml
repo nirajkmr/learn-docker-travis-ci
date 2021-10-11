@@ -5,3 +5,12 @@ services:
 script:
   - docker build -t nirajkmr777s/node .
   - docker images nirajkmr777s/node
+
+before_deploy:
+  - docker login -u nirajkmr777s -p Happy#2016
+
+deploy:
+  provider: script
+  script: docker push nirajkmr777s/node
+  on:
+    branch: master
